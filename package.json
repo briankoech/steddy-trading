@@ -16,6 +16,8 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@fontsource/raleway": "^4.5.11",
+    "@heroicons/react": "^2.0.13",
     "@mdx-js/react": "^2.1.5",
     "gatsby": "^4.24.5",
     "gatsby-plugin-image": "^2.24.0",

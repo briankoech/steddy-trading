@@ -2,6 +2,8 @@ import * as React from 'react';
 import { Header } from './header/Header';
 import { graphql, useStaticQuery } from 'gatsby';
 import { Seo } from './seo';
+import { ContactHeader } from './ContactHeader';
+import { Footer } from './Footer';
 
 export const Layout = ({
   children,
@@ -25,8 +27,10 @@ export const Layout = ({
   return (
     <>
       <Seo title={title} description={description} image={image} path={path} />
+      <ContactHeader />
       <Header />
       <main>{children}</main>
+      <Footer />
     </>
   );
 };

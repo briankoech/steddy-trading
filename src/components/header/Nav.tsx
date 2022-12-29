@@ -1,6 +1,7 @@
 import { Link } from 'gatsby';
 import * as React from 'react';
 import { useState } from 'react';
+import { Bars4Icon, CheckIcon } from '@heroicons/react/24/solid';
 
 const pages = [
   { title: 'Home', link: '/' },
@@ -14,7 +15,12 @@ const Links = () => {
   return (
     <>
       {pages.map(({ link, title }, idx) => (
-        <Link key={idx} to={link} className='block pr-3 hover:text-amber-400'>
+        <Link
+          key={idx}
+          to={link}
+          activeClassName='text-amber-400'
+          className='block px-5 hover:text-amber-400 uppercase text-gray-400 font-light'
+        >
           {title}
         </Link>
       ))}
@@ -38,7 +44,7 @@ const Nav = () => {
       <div className='sm:hidden relative'>
         <div>
           <button className='btn-icon' onClick={() => setshowMenu(!showMenu)}>
-            Menu
+            <Bars4Icon title='menu' />
           </button>
         </div>
         {showMenu && (

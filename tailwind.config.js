@@ -5,7 +5,14 @@ module.exports = {
     './src/components/**/*.{js,jsx,ts,tsx}',
   ],
   theme: {
-    extend: {},
+    fontFamily: {
+      display: ['raleway'],
+    },
+    extend: {
+      height: {
+        128: '32rem',
+      },
+    },
   },
   plugins: [],
 };
