@@ -11,7 +11,7 @@ export const ContactInfo = () => {
           </div>
           <div className='flex flex-col mx-5 text-white'>
             <span>Phone </span>
-            <span>+254702832788</span>
+            <a href='tel:+254702832788' className='hover:underline'>+254702832788</a>
           </div>
         </div>
 
