@@ -1,4 +1,8 @@
-import { EnvelopeOpenIcon, MapPinIcon, PhoneIcon } from '@heroicons/react/24/solid';
+import {
+  EnvelopeOpenIcon,
+  MapPinIcon,
+  PhoneIcon,
+} from '@heroicons/react/24/solid';
 import * as React from 'react';
 
 export const ContactInfo = () => {
@@ -11,7 +15,9 @@ export const ContactInfo = () => {
           </div>
           <div className='flex flex-col mx-5 text-white'>
             <span>Phone </span>
-            <a href='tel:+254702832788' className='hover:underline'>+254702832788</a>
+            <a href='tel:+254702832788' className='hover:underline'>
+              +254702832788
+            </a>
           </div>
         </div>
 
@@ -31,7 +37,9 @@ export const ContactInfo = () => {
           </div>
           <div className='flex flex-col mx-5 text-white'>
             <span>Email</span>
-            <a href="mailto:brnkoech@gmail.com">brnkoech@gmail.com</a>
+            <a href='mailto:brnkoech@gmail.com' className='hover:underline'>
+              brnkoech@gmail.com
+            </a>
           </div>
         </div>
       </div>

@@ -2,11 +2,12 @@ import * as React from 'react';
 import type { HeadFC } from 'gatsby';
 import { Layout } from '../components/Layout';
 
-const TeamPage = () => {
+const TeamPage = ({ location }) => {
   return (
     <Layout
-      title='Team page'
+      title='Our team'
       description='our team'
+      location={location.pathname}
     >
       My team
     </Layout>

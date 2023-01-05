@@ -1,14 +1,19 @@
 import * as React from 'react';
-import type { HeadFC } from 'gatsby';
+import { HeadFC, Link } from 'gatsby';
 import { Layout } from '../components/Layout';
+import { services } from '../data-source';
+import { ServiceCard } from '../components/ServiceCard';
 
-const ServicesPage = () => {
+const ServicesPage = ({ location }) => {
   return (
-    <Layout
-      title='Services page'
-      description='Services offered at steddytrading.com'
-    >
-      Services
+    <Layout title='Our Services' location={location.pathname}>
+      <div className='container mx-auto py-10'>
+        <div className='grid grid-cols-3'>
+          {services.map((service, idx) => (
+            <ServiceCard key={idx} service={service} />
+          ))}
+        </div>
+      </div>
     </Layout>
   );
 };

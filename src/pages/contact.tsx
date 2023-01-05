@@ -3,7 +3,7 @@ import { HeadFC } from 'gatsby';
 import { Layout } from '../components/Layout';
 
 const ContactPage = () => {
-  const API_KEY = 'AIzaSyD2EefMC4nrb9rIImUvz4LJu3WemfpsR2M';
+  const API_KEY = process.env.GOOGLE_MAPS_API_KEY;
   return (
     <Layout>
       <div>

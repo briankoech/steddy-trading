@@ -3,7 +3,7 @@ import * as React from 'react';
 
 export const ContactHeader = () => {
   return (
-    <div className='bg-gray-200 text-color-white'>
+    <div className='bg-gray-200'>
       <div className='container mx-auto p-3 flex flex-row text-gray-500'>
         <div className='grid grid-cols-3 divide-x-3'>
           <div className='flex flex-row p-2 items-center'>

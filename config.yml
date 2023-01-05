@@ -1,6 +1,6 @@
 collections:
-  - name: "Products",
-  - folder: "src/pages/products"
+  - name: "Projects",
+  - folder: "src/pages/projects"
   - fields:
       - label: "Title",
         name: "title"

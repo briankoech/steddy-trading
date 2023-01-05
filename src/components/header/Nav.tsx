@@ -6,7 +6,7 @@ import { Bars4Icon, CheckIcon } from '@heroicons/react/24/solid';
 const pages = [
   { title: 'Home', link: '/' },
   { title: 'Services', link: '/services' },
-  { title: 'Products', link: '/products' },
+  { title: 'Projects', link: '/projects' },
   { title: 'Our Team', link: '/team' },
   { title: 'Contact', link: '/contact' },
 ];
@@ -18,7 +18,7 @@ const Links = () => {
         <Link
           key={idx}
           to={link}
-          activeClassName='text-amber-400'
+          activeClassName='!text-amber-400'
           className='block px-5 hover:text-amber-400 uppercase text-gray-400 font-light'
         >
           {title}

@@ -2,9 +2,12 @@ import * as React from 'react';
 import { graphql, useStaticQuery, HeadFC, Link } from 'gatsby';
 import { Layout } from '../components/Layout';
 import { Hero } from '../components/Hero';
+import { services, projects } from '../data-source';
+import { ServiceCard } from '../components/ServiceCard';
+import { ProjectCard } from '../components/ProjectCard';
 
 const IndexPage = (props: any) => {
-  console.log(props);
+  console.log('PROPS', props);
   const data = useStaticQuery(graphql`
     query GetSiteTitle {
       site {
@@ -17,56 +20,6 @@ const IndexPage = (props: any) => {
 
   const meta = data?.site?.siteMetadata ?? {};
   console.log(meta);
-
-  const services = [
-    {
-      link: '',
-      img: 'https://res.cloudinary.com/dvqpgowdv/image/upload/c_scale,w_390/v1672252608/steddytrading.com/valeria-fursa-nY00XO2A8mM-unsplash_w0agex.jpg',
-      title: 'Land Survey',
-      description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut
-                enim ad minim veniam`,
-    },
-    {
-      link: '',
-      img: 'https://res.cloudinary.com/dvqpgowdv/image/upload/c_scale,w_390,h_260/v1672252607/steddytrading.com/towfiqu-barbhuiya-05XcCfTOzN4-unsplash_mykgdf.jpg',
-      title: 'Property brokerage',
-      description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut
-                enim ad minim veniam`,
-    },
-    {
-      link: '',
-      img: 'https://res.cloudinary.com/dvqpgowdv/image/upload/c_scale,w_390,h_260/v1672252608/steddytrading.com/werner-sevenster-JuP0ZG0UNi0-unsplash_eqeulw.jpg',
-      title: 'Land sale', // can we do
-      description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut
-                enim ad minim veniam`,
-    },
-  ];
-
-  const recentProjects = [
-    {
-      link: 'projects',
-      img: 'https://res.cloudinary.com/dvqpgowdv/image/upload/c_scale,w_464,h_310/v1672252607/steddytrading.com/tierra-mallorca-rgJ1J8SDEAY-unsplash_csynwb.jpg',
-      title: 'land sale',
-    },
-    {
-      link: 'projects',
-      img: 'https://res.cloudinary.com/dvqpgowdv/image/upload/c_scale,w_464,h_310/v1672252607/steddytrading.com/tierra-mallorca-rgJ1J8SDEAY-unsplash_csynwb.jpg',
-      title: 'land sale',
-    },
-    {
-      link: 'projects',
-      img: 'https://res.cloudinary.com/dvqpgowdv/image/upload/c_scale,w_464,h_310/v1672252607/steddytrading.com/tierra-mallorca-rgJ1J8SDEAY-unsplash_csynwb.jpg',
-      title: 'land sale',
-    },
-    {
-      link: 'projects',
-      img: 'https://res.cloudinary.com/dvqpgowdv/image/upload/c_scale,w_464,h_310/v1672252607/steddytrading.com/tierra-mallorca-rgJ1J8SDEAY-unsplash_csynwb.jpg',
-      title: 'land sale',
-    },
-  ];
 
   return (
     <Layout>
@@ -85,19 +38,11 @@ const IndexPage = (props: any) => {
           </p>
 
           <div className='grid grid-cols-3 bg-white'>
-            {services.map((service, idx) => (
-              <div key={idx} className=''>
-                <Link to={service.link}>
-                  <img src={service.img} className='block w-full' />
-                </Link>
-                <Link to={service.link}>
-                  <h4 className='uppercase text-center py-5 font-medium after:block after:content after:bg-amber-400 after:w-10 after:h-0.5 after:mt-4 after:mx-auto'>
-                    {service.title}
-                  </h4>
-                </Link>
-                <p className='px-10 text-center mb-10'>{service.description}</p>
-              </div>
-            ))}
+            {services
+              .filter((s) => s.featured)
+              .map((service, idx) => (
+                <ServiceCard key={idx} service={service} />
+              ))}
           </div>
 
           <Link
@@ -122,22 +67,12 @@ const IndexPage = (props: any) => {
           </p>
 
           <div className='grid grid-cols-4 w-full h-80'>
-            {recentProjects.map((project, idx) => (
-              <div className='flex items-center justify-center bg-slate-400 bg-center bg-no-repeat bg-cover hover:bg-gray-500' style={{ backgroundImage: `url('${project.img}')`}}>
-              { /* <img key={idx} src={project.img} /> */ }
-                  <div className='flex flex-col items-center justify-center w-full h-full hover:bg-black/30 opacity-0 hover:opacity-100 duration-1000 ease-in-out hover:ease-in-out transition-all'>
-                    <p className='text-white mb-4 text-sm capitalize'>{project.title}</p>
-                    <Link
-                      to='/projects'
-                      className='uppercase border border-white text-white px-4 py-2 rounded-3xl text-sm font-semibold hover:bg-yellow-500 hover:border-yellow-500'
-                    >
-                      View project
-                    </Link>
-                  </div>
-              </div>
-            ))}
+            {projects
+              .filter((p) => p.featured)
+              .map((project, idx) => (
+                <ProjectCard key={idx} project={project} />
+              ))}
           </div>
-
 
           <div className='flex flex-row mt-10'>
             <h3 className='text-center'>
