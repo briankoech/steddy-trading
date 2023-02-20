@@ -4,6 +4,7 @@ import {
   PhoneIcon,
 } from '@heroicons/react/24/solid';
 import * as React from 'react';
+import { contactInfo } from '../../data-source';
 
 export const ContactInfo = () => {
   return (
@@ -15,8 +16,8 @@ export const ContactInfo = () => {
           </div>
           <div className='flex flex-col mx-5 text-white'>
             <span>Phone </span>
-            <a href='tel:+254702832788' className='hover:underline'>
-              +254702832788
+            <a href={`tel:${contactInfo.phone}`} className='hover:underline'>
+              {contactInfo.phone}
             </a>
           </div>
         </div>
@@ -37,8 +38,8 @@ export const ContactInfo = () => {
           </div>
           <div className='flex flex-col mx-5 text-white'>
             <span>Email</span>
-            <a href='mailto:brnkoech@gmail.com' className='hover:underline'>
-              brnkoech@gmail.com
+            <a href={`mailto:${contactInfo.email}`} className='hover:underline'>
+              {contactInfo.email}
             </a>
           </div>
         </div>

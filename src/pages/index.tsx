@@ -1,10 +1,11 @@
 import * as React from 'react';
 import { graphql, useStaticQuery, HeadFC, Link } from 'gatsby';
 import { Layout } from '../components/Layout';
-import { Hero } from '../components/Hero';
 import { services, projects } from '../data-source';
 import { ServiceCard } from '../components/ServiceCard';
 import { ProjectCard } from '../components/ProjectCard';
+import Button from '../components/Button';
+import { Hero } from '../components/Hero';
 
 const IndexPage = (props: any) => {
   console.log('PROPS', props);
@@ -36,7 +37,7 @@ const IndexPage = (props: any) => {
             sett or home repair. We provide a professional service for private
             and commercial customers
           </p>
-
+          
           <div className='grid grid-cols-3 bg-white'>
             {services
               .filter((s) => s.featured)
@@ -62,8 +63,7 @@ const IndexPage = (props: any) => {
 
           <p className='px-10 py-7 text-center max-w-5xl'>
             Here are a few of many projects we have completed for our customers.
-            We provide a professional service which includes consultation, free
-            estimate, design, supply of materials and installation.
+            We provide a professional service which includes consultation on property sale, subdivision projects, land consolidation among others.
           </p>
 
           <div className='grid grid-cols-4 w-full h-80'>

@@ -1,4 +1,5 @@
 import { ClockIcon, EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/solid';
+import { contactInfo } from '../../data-source';
 import * as React from 'react';
 
 export const ContactHeader = () => {
@@ -9,8 +10,8 @@ export const ContactHeader = () => {
           <div className='flex flex-row p-2 items-center'>
             <PhoneIcon className='h-4 px-2 ' />
             <small>
-              <a href='tel:+254702832788' className='hover:underline'>
-                +254702832788
+              <a href={`tel:${contactInfo.phone}`} className='hover:underline'>
+                {contactInfo.phone}
               </a>
             </small>
           </div>
@@ -19,10 +20,10 @@ export const ContactHeader = () => {
             <EnvelopeIcon className='h-4 px-2 ' />
             <small>
               <a
-                href='mailto:brnkoech@gmail.com?subject = FromWebsite&body = Message'
+                href={`mailto:${contactInfo.email}?subject = FromWebsite&body = Message`}
                 className='hover:underline'
               >
-                brnkoech@gmail.com
+                {contactInfo?.email}
               </a>
             </small>
           </div>

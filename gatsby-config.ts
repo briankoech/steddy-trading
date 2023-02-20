@@ -52,6 +52,20 @@ const config: GatsbyConfig = {
     },
 
     'gatsby-plugin-postcss',
+    {
+      resolve: 'gatsby-plugin-purgecss',
+      options: {
+        whitelist: [
+          'slick-slider',
+          'slick-initialized',
+          'slick-list',
+          'slick-track',
+          'slick-slide',
+          'slick-active',
+          'slick-current',
+        ],
+      },
+    },
   ],
 };
 
