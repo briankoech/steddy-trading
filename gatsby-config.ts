@@ -55,6 +55,7 @@ const config: GatsbyConfig = {
     },
 
     'gatsby-plugin-postcss',
+    /*
     {
       resolve: 'gatsby-plugin-purgecss',
       options: {
@@ -69,6 +70,7 @@ const config: GatsbyConfig = {
         ],
       },
     },
+    */
   ],
 };
 

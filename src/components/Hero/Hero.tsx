@@ -70,7 +70,7 @@ export const Hero = () => {
   };
 
   return (
-    <div className='h-128 bg-gray-50'>
+    <div className='h-128 bg-gray-50 relative'>
       <Slider {...settings}>
         {heroContent.map((content, idx) => (
           <HeroItem key={idx} content={content} />

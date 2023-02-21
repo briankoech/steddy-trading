@@ -99,7 +99,7 @@ export const projects: Array<IProject> = [
 
 export const contactInfo = {
   phone: '+254722244971',
-  email: 'njihiak@yahoo.com',
+  email: 'steddytradingcoltd@gmail.com',
 };
 
 export const heroContent: Array<IHeroData> = [

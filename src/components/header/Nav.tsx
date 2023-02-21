@@ -48,7 +48,7 @@ const Nav = () => {
           </button>
         </div>
         {showMenu && (
-          <div className='absolute top-10 right-0 z-50 shadow-xl rounded p-2'>
+          <div className='absolute bg-black top-10 right-0 z-50 shadow-xl rounded p-2'>
             <Links />
           </div>
         )}
