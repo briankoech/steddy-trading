@@ -8,7 +8,7 @@ import { Link } from 'gatsby';
 function PrevArrow({ className, style, onClick }: any) {
   return (
     <button
-      className={`${className}  !py-6 !flex !items-center !justify-center !left-0 !text-yellow-500 !bg-transparent hover:!bg-white !h-auto !w-auto z-10 before:!content-['']`}
+      className={`${className} !hidden md:!flex !py-6 !items-center !justify-center !left-0 !text-yellow-500 !bg-transparent hover:!bg-white !h-auto !w-auto z-10 before:!content-['']`}
       style={{ ...style }}
       onClick={onClick}
     >
@@ -20,7 +20,7 @@ function PrevArrow({ className, style, onClick }: any) {
 function NextArrow({ className, style, onClick }: any) {
   return (
     <button
-      className={`${className} !py-6 !flex !items-center !justify-center !right-0 !text-yellow-500 !bg-transparent hover:!bg-white !h-auto !w-auto z-10 before:!content-[]`}
+      className={`${className} !hidden md:!flex !py-6 !items-center !justify-center !right-0 !text-yellow-500 !bg-transparent hover:!bg-white !h-auto !w-auto z-10 before:!content-[]`}
       style={{ ...style }}
       onClick={onClick}
     >
@@ -42,7 +42,10 @@ const HeroItem = ({ content }: { content: IHeroData }) => {
           </div>
           <div className='bg-gray-800 p-5 text-white opacity-70'>
             <p className='block mb-4'>{content?.description}</p>
-            <Link to="/services" className='border rounded-3xl border-white text-white font-bold px-4 py-2 uppercase border-radius hover:bg-amber-400 hover:border-amber-400'>
+            <Link
+              to='/services'
+              className='border rounded-3xl border-white text-white font-bold px-4 py-2 uppercase border-radius hover:bg-amber-400 hover:border-amber-400'
+            >
               Get Started
             </Link>
           </div>
@@ -65,8 +68,8 @@ export const Hero = () => {
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
     appendDots: (dots) => {
-      return <div style={{ bottom: '0'}}>{dots}</div>
-    }
+      return <div style={{ bottom: '0' }}>{dots}</div>;
+    },
   };
 
   return (
