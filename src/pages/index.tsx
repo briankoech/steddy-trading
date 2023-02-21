@@ -38,7 +38,7 @@ const IndexPage = (props: any) => {
             and commercial customers
           </p>
           
-          <div className='grid grid-cols-3 bg-white'>
+          <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 bg-white'>
             {services
               .filter((s) => s.featured)
               .map((service, idx) => (
@@ -66,7 +66,7 @@ const IndexPage = (props: any) => {
             We provide a professional service which includes consultation on property sale, subdivision projects, land consolidation among others.
           </p>
 
-          <div className='grid grid-cols-4 w-full h-80'>
+          <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 w-full md:h-80'>
             {projects
               .filter((p) => p.featured)
               .map((project, idx) => (
@@ -76,7 +76,7 @@ const IndexPage = (props: any) => {
 
           <div className='flex flex-row mt-10'>
             <h3 className='text-center'>
-              <span className='uppercase text-xl font-medium px-7'>
+              <span className='uppercase text-xl font-medium px-7 hidden sm:inline-block'>
                 Explore our projects
               </span>
 

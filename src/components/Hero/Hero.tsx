@@ -36,7 +36,7 @@ const HeroItem = ({ content }: { content: IHeroData }) => {
       style={{ backgroundImage: `url('${content.img}')` }}
     >
       <div className='container flex items-center mx-auto'>
-        <div className='p-3 flex flex-col divide-y-2 divide-amber-400 max-w-md'>
+        <div className='p-3 flex flex-col divide-y-2 divide-amber-400 max-w-md mx-auto md:m-0'>
           <div className='bg-black-600 text-white uppercase border-bottom-1 text-xl bg-gray-800 p-5'>
             <h2>{content?.title}</h2>
           </div>

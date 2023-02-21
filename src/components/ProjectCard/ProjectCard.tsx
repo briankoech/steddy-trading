@@ -1,6 +1,7 @@
 import { Link } from 'gatsby';
 import * as React from 'react';
 import { Size } from '../../enums';
+import { IProject } from '../../interfaces';
 
 export function ProjectCard({ project, size }: { project: IProject, size?: Size }) {
   return (
@@ -8,7 +9,7 @@ export function ProjectCard({ project, size }: { project: IProject, size?: Size 
     className={`flex items-center justify-center bg-slate-400 bg-center bg-no-repeat bg-cover hover:bg-gray-500 ${size == Size.SM ? 'h-48' : 'h-80' }`}
       style={{ backgroundImage: `url('${project.img}')` }}
     >
-      <div className='flex flex-col items-center justify-center w-full h-full hover:bg-black/30 opacity-0 hover:opacity-100 duration-1000 ease-in-out hover:ease-in-out transition-all'>
+      <div className='flex flex-col items-center justify-center w-full h-full hover:bg-black/30 opacity-0 hover:opacity-100 duration-500 ease-in-out hover:ease-in-out transition-all'>
         <p className='text-white mb-4 text-sm capitalize'>{project.title}</p>
         <Link
           to='/projects'

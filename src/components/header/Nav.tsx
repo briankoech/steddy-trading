@@ -19,7 +19,7 @@ const Links = () => {
           key={idx}
           to={link}
           activeClassName='!text-amber-400'
-          className='block px-5 hover:text-amber-400 uppercase text-gray-400 font-light sm:text-sm'
+        className='block px-5 hover:text-amber-400 uppercase text-gray-400 font-light sm:text-xs md:text-sm'
         >
           {title}
         </Link>
