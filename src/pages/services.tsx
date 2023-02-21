@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { HeadFC, Link } from 'gatsby';
+import { HeadFC } from 'gatsby';
 import { Layout } from '../components/Layout';
 import { services } from '../data-source';
 import { ServiceCard } from '../components/ServiceCard';
@@ -7,8 +7,8 @@ import { ServiceCard } from '../components/ServiceCard';
 const ServicesPage = ({ location }: any) => {
   return (
     <Layout title='Our Services' location={location.pathname}>
-      <div className='container mx-auto py-10'>
-        <div className='grid grid-cols-3'>
+      <div className='container mx-auto py-10 px-7 sm:px-0'>
+        <div className='grid grid-cols-1 sm:grid-cols-2  md:grid-cols-3'>
           {services.map((service, idx) => (
             <ServiceCard key={idx} service={service} />
           ))}
