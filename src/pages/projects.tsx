@@ -12,8 +12,8 @@ const ProjectsPage = ({ location }: any) => {
       description='Projects that we sell at steddytrading.com'
       location={location.pathname}
     >
-      <div className='container mx-auto py-10'>
-        <div className='grid grid-cols-4 gap-8'>
+      <div className='container mx-auto py-10 px-7 sm:px-0'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8'>
           {projects.map((project, idx) => (
             <ProjectCard key={idx} project={project} size={Size.SM} />
           ))}

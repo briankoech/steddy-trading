@@ -19,7 +19,7 @@ const ContactPage = () => {
 
         <div className='container mx-auto'>
           <form className='my-16'>
-            <div className='grid grid-cols-2'>
+            <div className='grid grid-cols-1 p-7 sm:grid-cols-2 sm:p-0'>
               <div className='grid grid-cols-1'>
                 <input
                   type='text'
@@ -38,7 +38,7 @@ const ContactPage = () => {
                 />
               </div>
 
-              <div className='px-5'>
+              <div className='mt-5 sm:mt-0 sm:px-5'>
                 <textarea
                   placeholder='Message'
                   className='border border-gray-300 w-full h-full px-5 py-4 shadow-sm focus:outline-none focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500'
@@ -46,14 +46,14 @@ const ContactPage = () => {
               </div>
             </div>
 
-            <div className='flex flex-row items-center justify-between mt-5 py-5'>
+            <div className='flex flex-col sm:flex-row items-start sm:items-center  justify-between px-7 sm:px-0 sm:mt-5 sm:py-5'>
               <span className='text-black text-sm'>
                 We will contact you within one business day
               </span>
 
               <button
                 type='submit'
-                className='uppercase text-white rounded-3xl text-sm font-bold px-5 py-3 bg-yellow-500 border border-yellow-500 focus:bg-white focus:text-black focus:border-yellow-500 hover:text-black hover:bg-white hover:border-yellow-500'
+className='uppercase text-white rounded-3xl text-sm font-bold px-5 py-3 bg-yellow-500 border border-yellow-500 focus:bg-white focus:text-black focus:border-yellow-500 hover:text-black hover:bg-white hover:border-yellow-500 self-end sm:self-start'
               >
                 send message
               </button>
