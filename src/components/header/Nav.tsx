@@ -19,7 +19,7 @@ const Links = () => {
           key={idx}
           to={link}
           activeClassName='!text-amber-400'
-          className='block px-5 hover:text-amber-400 uppercase text-gray-400 font-light'
+          className='block px-5 hover:text-amber-400 uppercase text-gray-400 font-light sm:text-sm'
         >
           {title}
         </Link>
@@ -44,7 +44,7 @@ const Nav = () => {
       <div className='sm:hidden relative'>
         <div>
           <button className='btn-icon' onClick={() => setshowMenu(!showMenu)}>
-            <Bars4Icon title='menu' />
+            <Bars4Icon title='menu' className="h-10" />
           </button>
         </div>
         {showMenu && (

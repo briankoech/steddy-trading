@@ -5,7 +5,7 @@ import { projects } from '../data-source';
 import { ProjectCard } from '../components/ProjectCard';
 import { Size } from '../enums';
 
-const ProjectsPage = ({ location }) => {
+const ProjectsPage = ({ location }: any) => {
   return (
     <Layout
       title='Our Projects'

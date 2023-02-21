@@ -8,12 +8,12 @@ import { PageHeader } from './header';
 
 export const Layout = ({
   children,
-  title = false,
-  description = false,
-  image = false,
-  path = false,
+  title = null,
+  description = null,
+  image = null,
+  path = null,
   location = '',
-}) => {
+}: any) => {
   const data = useStaticQuery(graphql`
     query GetSiteTitle {
       site {
@@ -24,7 +24,6 @@ export const Layout = ({
     }
   `);
 
-  console.log('location', location);
   const meta = data?.site?.siteMetadata ?? {};
   const showPageHeader = location.includes('services') || location.includes('projects') || location.includes('team') ;
 

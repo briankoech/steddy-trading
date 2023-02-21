@@ -4,7 +4,7 @@ import { Layout } from '../components/Layout';
 import { services } from '../data-source';
 import { ServiceCard } from '../components/ServiceCard';
 
-const ServicesPage = ({ location }) => {
+const ServicesPage = ({ location }: any) => {
   return (
     <Layout title='Our Services' location={location.pathname}>
       <div className='container mx-auto py-10'>

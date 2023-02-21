@@ -2,7 +2,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
 
-export function Seo(props) {
+export function Seo(props: any) {
   const data = useStaticQuery(graphql`
     query GetSiteMetadata {
       site {
@@ -16,12 +16,12 @@ export function Seo(props) {
     }
   `);
 
-  const defaults = data?.site?.siteMetadata;
+  const defaults: any = data?.site?.siteMetadata;
 
   const title = props.title || defaults?.title;
   const description = props.description || defaults?.description;
-  const image: string = new URL(props.image || defaults?.image);
-  const url: string = new URL(props.path || '/', defaults.siteUrl);
+  const image: string = new URL(props.image || defaults?.image).toString();
+  const url: string = new URL(props.path || '/', defaults.siteUrl).toString();
 
   return (
     <Helmet>

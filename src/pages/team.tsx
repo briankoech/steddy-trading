@@ -2,14 +2,14 @@ import * as React from 'react';
 import type { HeadFC } from 'gatsby';
 import { Layout } from '../components/Layout';
 
-const TeamPage = ({ location }) => {
+const TeamPage = ({ location }: any) => {
   return (
     <Layout
       title='Our team'
       description='our team'
       location={location.pathname}
     >
-      My team
+      <div className="container mx-auto p-20 flex flex-row items-center justify-center">Coming soon</div>
     </Layout>
   );
 };
