@@ -54,7 +54,7 @@ export const ContactForm = ({ }) => {
               errors?.message && <p className='text-red-500 text-sm'>Message is required and must be at least 10 characters</p>
             }
           </div>
-          <button className='p-3 bg-yellow-400 text-white' type="submit">Send Message</button>
+          <button className='p-3 bg-yellow-500 text-white font-bold' type="submit">Send Message</button>
         </div>
       </form>
     </div>

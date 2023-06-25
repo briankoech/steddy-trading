@@ -10,3 +10,25 @@ body {
 iframe {
   width: 100%;
 }
+
+.image-gallery {
+  width: 100%;
+  height: auto;
+}
+
+.image-gallery-image {
+  height: 50vh !important;
+}
+
+.fullscreen .image-gallery-image {
+  height: calc(100vh - 80px) !important;
+}
+
+.image-gallery-slide img {
+  width: 100%;
+  height: auto;
+  max-height: 50vh;
+  object-fit: cover;
+  overflow: hidden;
+  object-position: center center;
+}

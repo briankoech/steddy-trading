@@ -1,7 +1,6 @@
 import path from "path";
 
-exports.createPages = async ({ actions, graphql, reporter }) => {
-
+exports.createPages = async ({ actions, graphql, reporter }: any) => {
   const { createPage } = actions;
 
   // query for markdown nodes for creating the page
@@ -22,22 +21,29 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
               url
             }
             pin_location
-            description
+            description {
+              data {
+                description
+              }
+            }
             thumbnail {
               url
-              file {
-                childImageSharp {
-                  gatsbyImageData(
-                    height: 400
-                    placeholder: BLURRED
-                  )
-                }
-              }
+            }
+          }
+        }
+        allStrapiService {
+          nodes {
+            slug
+            title
+            featured
+            headline
+            thumbnail {
+              url
             }
           }
         }
       }
-    `
+    `,
   );
 
   if (result.errors) {
@@ -46,17 +52,32 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   }
 
   // create pages for each property
-  const templateComponent = path.resolve('./src/pages/properties/property.tsx');
+  const propertyTemplateComponent = path.resolve(
+    "./src/pages/properties/property.tsx",
+  );
+  const serviceTemplateComponent = path.resolve(
+    "./src/pages/services/service.tsx",
+  );
 
   result.data.allStrapiProperty.nodes.forEach((node: any) => {
     createPage({
-      component: templateComponent,
+      component: propertyTemplateComponent,
       path: `properties/${node.slug}`,
       context: {
-        property: node
+        property: node,
         // passs any additional dat you need to the template
-      }
-    })
+      },
+    });
   });
 
+  result.data.allStrapiService.nodes.forEach((node: any) => {
+    createPage({
+      component: serviceTemplateComponent,
+      path: `services/${node.slug}`,
+      context: {
+        service: node,
+        // passs any additional dat you need to the template
+      },
+    });
+  });
 };

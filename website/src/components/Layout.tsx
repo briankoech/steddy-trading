@@ -14,18 +14,22 @@ export const Layout = ({
   path = null,
   location = '',
 }: any) => {
-  const data = useStaticQuery(graphql`
+  const { strapiCompanyInfo, error, site } = useStaticQuery(graphql`
     query GetSiteTitle {
       site {
         siteMetadata {
           title
         }
       }
+      strapiCompanyInfo {
+        about
+      }
     }
   `);
 
-  const meta = data?.site?.siteMetadata ?? {};
-  const showPageHeader = true || location.includes('services') || location.includes('projects') || location.includes('team');
+  const meta = site?.siteMetadata ?? {};
+  const showPageHeader = location.includes('services') || location.includes('projects') || location.includes('team');
+  const { about } = strapiCompanyInfo;
 
   return (
     <>
@@ -34,7 +38,7 @@ export const Layout = ({
       <Header />
       {showPageHeader ? <PageHeader title={title} /> : null}
       <main>{children}</main>
-      <Footer />
+      <Footer about={about} />
     </>
   );
 };
