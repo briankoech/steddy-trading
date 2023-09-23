@@ -3,12 +3,9 @@ import { graphql, useStaticQuery } from 'gatsby';
 import * as React from 'react';
 import { ContactInfo } from './ContactInfo';
 
-export const Footer = () => {
-  const { strapiAbout, allStrapiService } = useStaticQuery(graphql`
+export const Footer = ({ about }: any) => {
+  const { allStrapiService } = useStaticQuery(graphql`
     query {
-      strapiAbout {
-        title
-      }
       allStrapiService {
         nodes {
           slug
@@ -18,7 +15,6 @@ export const Footer = () => {
     }
   `);
 
-  const { title } = strapiAbout;
   const services = allStrapiService?.nodes || [];
 
   return (
@@ -31,7 +27,7 @@ export const Footer = () => {
               About Us
             </h6>
             <p>
-              {title}
+              {about}
             </p>
           </div>
 

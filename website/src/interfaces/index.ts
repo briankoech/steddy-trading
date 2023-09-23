@@ -1,6 +1,7 @@
 export interface Thumbnail {
   url: string;
   file: any;
+  localFile: any;
 }
 
 export interface Service {
@@ -18,7 +19,7 @@ export interface Property {
   slug: string;
   price: number;
   thumbnail: Thumbnail;
-  size: string,
+  size: string;
   location: string;
   sold: boolean;
 }
@@ -26,6 +27,6 @@ export interface Property {
 export interface IHeroData {
   title: string;
   description: string;
-  img: string;
+  img: any;
   link: string;
 }

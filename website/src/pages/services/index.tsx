@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { graphql, HeadFC } from 'gatsby';
-import { Layout } from '../components/Layout';
-import { ServiceCard } from '../components/ServiceCard';
-import { Service } from '../interfaces';
+import { Layout } from '../../components/Layout';
+import { ServiceCard } from '../../components/ServiceCard';
+import { Service } from '../../interfaces';
 
 const ServicesPage = ({ data, error, location }: any) => {
 
@@ -39,14 +39,6 @@ export const query = graphql`
           headline
           thumbnail {
             url
-            file {
-              childImageSharp {
-                gatsbyImageData(
-                  height: 400
-                  placeholder: BLURRED
-                )
-              }
-            }
           }
         }
       }
