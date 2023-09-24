@@ -4,9 +4,11 @@
   "private": true,
   "description": "",
   "scripts": {
-    "develop:backend": "npm --prefix backend run develop",
+    "develop:backend": "npm --prefix strapi run develop",
     "develop:frontend": "wait-on http://localhost:1337/admin && npm --prefix website run develop",
-    "develop": "cross-env FORCE_COLOR=1 npm-run-all -l -p develop:*"
+    "develop": "cross-env FORCE_COLOR=1 npm-run-all -l -p develop:*",
+    "prod:backend:build": "npm --prefix strapi run build",
+    "prod:backend:start": "npm --prefix strapi run start"
   },
   "repository": {
     "type": "git",
