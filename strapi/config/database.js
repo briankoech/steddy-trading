@@ -1,11 +1,9 @@
-const path = require('path');
-
 module.exports = () => ({
   connection: {
-    client: 'sqlite',
+    client: "mysql",
     connection: {
-      filename: path.join(__dirname, "..", ".tmp/data.db")
+      connectionString: process.env.DATABASE_URL,
     },
-    useNullAsDefault: true
+    useNullAsDefault: true,
   },
 });
