@@ -5,11 +5,13 @@
   "description": "A Strapi application",
   "scripts": {
     "develop": "strapi develop",
-    "start": "strapi start",
+    "start": "node node_modules/@strapi/strapi/bin/strapi.js start",
     "build": "strapi build",
+    "build:prod": "NODE_ENV=production && npm run build",
+    "build:win": "cross-env NODE_ENV=production npm run build",
+    "start:win": "cross-env NODE_ENV=production npm start",
     "strapi": "strapi"
   },
-  "devDependencies": {},
   "dependencies": {
     "@strapi/plugin-graphql": "^4.10.6",
     "@strapi/plugin-i18n": "4.10.6",
@@ -17,6 +19,7 @@
     "@strapi/provider-upload-cloudinary": "4.10.6",
     "@strapi/strapi": "4.10.6",
     "better-sqlite3": "^8.4.0",
+    "cross-env": "^7.0.3",
     "pg": "8.8.0",
     "strapi-plugin-vercel-deploy": "^1.4.0"
   },
